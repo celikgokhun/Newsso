@@ -46,9 +46,3 @@ fun NewsTextButton(
         )
     }
 }
-
-
-
-
-
-

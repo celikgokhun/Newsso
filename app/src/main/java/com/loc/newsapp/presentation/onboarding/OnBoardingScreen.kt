@@ -18,8 +18,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.loc.newsapp.presentation.Dimensions.MediumPadding2
+import com.loc.newsapp.presentation.Dimensions.PagerIndicatorWidth
 import com.loc.newsapp.presentation.common.NewsButton
 import com.loc.newsapp.presentation.common.NewsTextButton
 import com.loc.newsapp.presentation.onboarding.components.OnBoardingPage
@@ -56,12 +56,14 @@ fun OnBoardingScreen() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             PagerIndicator(
-                modifier = Modifier.width(52.dp),
+                modifier = Modifier.width(PagerIndicatorWidth),
                 pagesSize = pages.size,
                 selectedPage = pagerState.currentPage
             )
 
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 val scope = rememberCoroutineScope()
                 //Hide the button when the first element of the list is empty
                 if (buttonsState.value[0].isNotEmpty()) {
